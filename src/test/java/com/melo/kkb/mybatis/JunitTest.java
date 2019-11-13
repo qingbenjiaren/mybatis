@@ -21,8 +21,8 @@ public class JunitTest {
         while(rs.next()){
             System.out.println(rs.getString("name"));
         }
-        String sql = config.getStatement("selectselectUser").getSqlSource().getBoundSql(null).getSql();
-        System.out.println(sql);
+        //String sql = config.getStatement("selectselectUser").getSqlSource().getBoundSql(null).getSql();
+        //System.out.println(sql);
 
     }
 }
