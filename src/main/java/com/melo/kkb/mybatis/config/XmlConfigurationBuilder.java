@@ -1,5 +1,6 @@
 package com.melo.kkb.mybatis.config;
 
+import com.melo.kkb.mybatis.io.Resource;
 import com.melo.kkb.mybatis.utils.DocumentUtils;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.dom4j.Document;
@@ -12,6 +13,7 @@ import java.util.Properties;
 /**
  * 解析全局配置文件
  */
+@SuppressWarnings("unchecked")
 public class XmlConfigurationBuilder {
     private Configuration configuration;
 
@@ -34,6 +36,12 @@ public class XmlConfigurationBuilder {
     }
 
     private void parseMappers(Element mappers) {
+        List<Element> mapperElements = mappers.elements("mapper");
+        XmlMapperBuilder xmlMapperBuilder = new XmlMapperBuilder(configuration);
+        for(Element mapperElement : mapperElements){
+            String mapperLocation = mapperElement.attributeValue("resource");
+            xmlMapperBuilder.parse(Resource.getResourceAsStream(mapperLocation));
+        }
     }
 
     private void parseEnvironment(Element environmentElement) {
