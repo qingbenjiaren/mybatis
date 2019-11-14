@@ -5,6 +5,12 @@ public class User {
     private String name;
     private String website;
 
+    public User(String id, String name, String website) {
+        this.id = id;
+        this.name = name;
+        this.website = website;
+    }
+
     public String getId() {
         return id;
     }

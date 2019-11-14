@@ -34,7 +34,7 @@ public class XmlStatementBuilder {
     void parse(String namespace, Element selectElement){
         String resultType = selectElement.attributeValue("resultType");
         String parameterType = selectElement.attributeValue("parameterType");
-        String statementId = namespace + selectElement.attributeValue("id");
+        String statementId = namespace +"."+ selectElement.attributeValue("id");
         String statementType = selectElement.attributeValue("statementType");
         configuration.addStatement(statementId,new MapperStatement
                 .Builder(statementId,createSqlSource(selectElement))

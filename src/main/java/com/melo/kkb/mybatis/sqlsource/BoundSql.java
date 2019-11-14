@@ -6,7 +6,7 @@ import java.util.List;
 public class BoundSql {
     //jdbc可以执行的sql
     private String sql;
-    private List<ParameterMapping> parameterMappingList = new ArrayList<>();
+    private List<ParameterMapping> parameterMappingList;
 
     public BoundSql(String sql, List<ParameterMapping> parameterMappingList) {
         this.sql = sql;

@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <mapper namespace="select">
-    <select id="selectUser" resultType="com.melo.kkb.mybatis.pojo.User" parameterType="com.melo.kkb.mybatis.pojo.User">select * from user_info where id = #{id}<if test="name != null">AND name = ${name}<if test="website != null">AND website = 1</if></if></select>
+    <select id="selectUser" resultType="com.melo.kkb.mybatis.pojo.User" parameterType="com.melo.kkb.mybatis.pojo.User">
+        select * from user_info where id = #{id} AND name = ${name}
+        <if test="name != null">
+            AND name = ${name}
+            <if test="website != null">
+                AND website = 1</if>
+        </if>
+    </select>
 </mapper>

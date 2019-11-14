@@ -3,6 +3,7 @@ package com.melo.kkb.mybatis;
 import com.melo.kkb.mybatis.config.Configuration;
 import com.melo.kkb.mybatis.config.XmlConfigurationBuilder;
 import com.melo.kkb.mybatis.io.Resource;
+import com.melo.kkb.mybatis.pojo.User;
 import org.junit.Test;
 
 import javax.sql.DataSource;
@@ -13,16 +14,12 @@ import java.sql.SQLException;
 public class JunitTest {
 
     @Test
-    public void testConfiguration() throws SQLException {
+    public void testConfiguration(){
         Configuration config = new XmlConfigurationBuilder().parse(Resource.getResourceAsStream("mybatisConfig.xml"));
-        DataSource dataSource = config.getDataSource();
-        Connection con = dataSource.getConnection();
-        ResultSet rs = con.prepareStatement("select * from t_users order by website").executeQuery();
-        while(rs.next()){
-            System.out.println(rs.getString("name"));
-        }
-        //String sql = config.getStatement("selectselectUser").getSqlSource().getBoundSql(null).getSql();
-        //System.out.println(sql);
+        String sql = config.getStatement("select.selectUser").getSqlSource().getBoundSql(new User("123","1231","123213")).getSql();
+        System.out.println(sql);
+    }
+    public void testExcutor(){
 
     }
 }
