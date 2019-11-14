@@ -2,11 +2,14 @@
 
 <mapper namespace="select">
     <select id="selectUser" resultType="com.melo.kkb.mybatis.pojo.User" parameterType="com.melo.kkb.mybatis.pojo.User">
-        select * from user_info where id = #{id} AND name = ${name}
+        select * from user_info where id = #{id}
         <if test="name != null">
             AND name = ${name}
             <if test="website != null">
                 AND website = 1</if>
         </if>
+    </select>
+    <select id="selectCount" resultType="java.lang.Integer" parameterType="com.melo.kkb.mybatis.pojo.User">
+        select count(1) from user_info where id = #{id}
     </select>
 </mapper>

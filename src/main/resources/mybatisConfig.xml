@@ -7,10 +7,10 @@
                 <property name="url" value="${jdbc.url}"/>
                 <property name="username" value="${jdbc.username}"/>
                 <property name="password" value="${jdbc.password}"/>-->
-                <property name="driver" value="org.postgresql.Driver"/>
-                <property name="url" value="jdbc:postgresql://192.168.199.102:5432/mybatisdb"/>
-                <property name="username" value="mybatis"/>
-                <property name="password" value="1234567a"/>
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://114.215.146.196:3306/mybatis"/>
+                <property name="username" value="root"/>
+                <property name="password" value="password"/>
             </dataSource>
         </environment>
     </environments>

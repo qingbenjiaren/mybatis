@@ -33,13 +33,13 @@ public class DefaultParameterHandler implements ParameterHandler {
             } else if (clazz == Map.class) {
                 List<ParameterMapping> parameterMappingList = boundSql.getParameterMappingList();
                 Map<String, Object> paramMap = (HashMap<String, Object>) param;
-                for (int i = 1; i <= parameterMappingList.size(); i++) {
-                    ps.setObject(i, paramMap.get(parameterMappingList.get(i).getName()));
+                for (int i = 0; i < parameterMappingList.size(); i++) {
+                    ps.setObject(i+1, paramMap.get(parameterMappingList.get(i).getName()));
                 }
             } else {
                 List<ParameterMapping> getParameterMappingList = boundSql.getParameterMappingList();
 
-                for (int i = 1; i <= getParameterMappingList.size(); i++) {
+                for (int i = 0; i < getParameterMappingList.size(); i++) {
                     // 获取#{}中的属性名称
                     ParameterMapping parameterMapping = getParameterMappingList.get(i);
                     String name = parameterMapping.getName();
@@ -48,7 +48,7 @@ public class DefaultParameterHandler implements ParameterHandler {
                     Field field = clazz.getDeclaredField(name);
                     field.setAccessible(true);
                     Object value = field.get(param);
-                    ps.setObject(i, value);
+                    ps.setObject(i+1, value);
                 }
             }
         }catch(Exception e){
