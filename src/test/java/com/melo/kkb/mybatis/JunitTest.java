@@ -19,7 +19,7 @@ public class JunitTest {
         String sql = config.getStatement("select.selectUser").getSqlSource().getBoundSql(new User("123","1231","123213")).getSql();
         System.out.println(sql);
     }
-    public void testExcutor(){
+    public void testExecutor(){
 
     }
 }
