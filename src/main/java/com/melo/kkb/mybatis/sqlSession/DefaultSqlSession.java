@@ -19,7 +19,14 @@ public class DefaultSqlSession implements SqlSession {
 
     @Override
     public <T> T selectOne(String statementId, Object param) {
-        List<T> list = selectList(statementId,param);
+        return selectOne(statementId,param,new DefaultResultHandler());
+
+    }
+
+    @Override
+    public <T> T selectOne(String statementId, Object param, ResultHandler handler) {
+        handler = handler == null ? new DefaultResultHandler() : handler;
+        List<T> list = selectList(statementId,param,handler);
         if(list != null && list.size()>0){
             return list.get(0);
         }
@@ -39,6 +46,7 @@ public class DefaultSqlSession implements SqlSession {
 
     @Override
     public <T> List<T> selectList(String statementId, Object param, ResultHandler handler) {
+        handler = handler == null ? new DefaultResultHandler() : handler;
         return executor.executeQuery(configuration.getStatement(statementId),configuration,param,handler);
     }
 }
