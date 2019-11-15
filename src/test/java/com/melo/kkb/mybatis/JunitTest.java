@@ -1,14 +1,13 @@
 package com.melo.kkb.mybatis;
 
-import com.melo.kkb.mybatis.SqlSession.SqlSessionFactoryBuilder;
-import com.melo.kkb.mybatis.SqlSession.iface.SqlSession;
-import com.melo.kkb.mybatis.SqlSession.iface.SqlSessionFactory;
+import com.melo.kkb.mybatis.sqlSession.SqlSessionFactoryBuilder;
+import com.melo.kkb.mybatis.sqlSession.iface.SqlSession;
+import com.melo.kkb.mybatis.sqlSession.iface.SqlSessionFactory;
 import com.melo.kkb.mybatis.config.Configuration;
 import com.melo.kkb.mybatis.config.XmlConfigurationBuilder;
 import com.melo.kkb.mybatis.io.Resource;
 import com.melo.kkb.mybatis.pojo.User;
 import org.junit.Test;
-import java.util.List;
 
 public class JunitTest {
 

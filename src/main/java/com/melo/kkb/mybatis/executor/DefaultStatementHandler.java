@@ -1,16 +1,14 @@
-package com.melo.kkb.mybatis.Executor;
+package com.melo.kkb.mybatis.executor;
 
-import com.melo.kkb.mybatis.Executor.iface.ParameterHandler;
-import com.melo.kkb.mybatis.Executor.iface.ResultHandler;
-import com.melo.kkb.mybatis.Executor.iface.StatementHandler;
+import com.melo.kkb.mybatis.executor.iface.ParameterHandler;
+import com.melo.kkb.mybatis.executor.iface.ResultHandler;
+import com.melo.kkb.mybatis.executor.iface.StatementHandler;
 import com.melo.kkb.mybatis.config.Configuration;
 import com.melo.kkb.mybatis.config.MapperStatement;
 import com.melo.kkb.mybatis.sqlsource.BoundSql;
-import javafx.scene.Parent;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 

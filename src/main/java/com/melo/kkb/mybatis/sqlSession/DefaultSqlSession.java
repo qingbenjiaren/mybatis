@@ -1,11 +1,9 @@
-package com.melo.kkb.mybatis.SqlSession;
+package com.melo.kkb.mybatis.sqlSession;
 
-import com.melo.kkb.mybatis.Executor.CacheExecutor;
-import com.melo.kkb.mybatis.Executor.DefaultResultHandler;
-import com.melo.kkb.mybatis.Executor.SimpleExecutor;
-import com.melo.kkb.mybatis.Executor.iface.Executor;
-import com.melo.kkb.mybatis.Executor.iface.ResultHandler;
-import com.melo.kkb.mybatis.SqlSession.iface.SqlSession;
+import com.melo.kkb.mybatis.executor.DefaultResultHandler;
+import com.melo.kkb.mybatis.executor.iface.Executor;
+import com.melo.kkb.mybatis.executor.iface.ResultHandler;
+import com.melo.kkb.mybatis.sqlSession.iface.SqlSession;
 import com.melo.kkb.mybatis.config.Configuration;
 
 import java.util.List;

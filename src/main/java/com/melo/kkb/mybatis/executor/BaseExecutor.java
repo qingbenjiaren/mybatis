@@ -1,7 +1,7 @@
-package com.melo.kkb.mybatis.Executor;
+package com.melo.kkb.mybatis.executor;
 
-import com.melo.kkb.mybatis.Executor.iface.Executor;
-import com.melo.kkb.mybatis.Executor.iface.ResultHandler;
+import com.melo.kkb.mybatis.executor.iface.Executor;
+import com.melo.kkb.mybatis.executor.iface.ResultHandler;
 import com.melo.kkb.mybatis.config.Configuration;
 import com.melo.kkb.mybatis.config.MapperStatement;
 

@@ -1,6 +1,6 @@
-package com.melo.kkb.mybatis.SqlSession;
+package com.melo.kkb.mybatis.sqlSession;
 
-import com.melo.kkb.mybatis.SqlSession.iface.SqlSessionFactory;
+import com.melo.kkb.mybatis.sqlSession.iface.SqlSessionFactory;
 import com.melo.kkb.mybatis.config.Configuration;
 import com.melo.kkb.mybatis.config.XmlConfigurationBuilder;
 

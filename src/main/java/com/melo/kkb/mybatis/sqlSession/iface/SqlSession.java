@@ -1,6 +1,6 @@
-package com.melo.kkb.mybatis.SqlSession.iface;
+package com.melo.kkb.mybatis.sqlSession.iface;
 
-import com.melo.kkb.mybatis.Executor.iface.ResultHandler;
+import com.melo.kkb.mybatis.executor.iface.ResultHandler;
 
 import java.util.List;
 

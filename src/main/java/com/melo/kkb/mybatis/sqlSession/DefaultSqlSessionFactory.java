@@ -1,9 +1,9 @@
-package com.melo.kkb.mybatis.SqlSession;
+package com.melo.kkb.mybatis.sqlSession;
 
-import com.melo.kkb.mybatis.Executor.CacheExecutor;
-import com.melo.kkb.mybatis.Executor.SimpleExecutor;
-import com.melo.kkb.mybatis.SqlSession.iface.SqlSession;
-import com.melo.kkb.mybatis.SqlSession.iface.SqlSessionFactory;
+import com.melo.kkb.mybatis.executor.CacheExecutor;
+import com.melo.kkb.mybatis.executor.SimpleExecutor;
+import com.melo.kkb.mybatis.sqlSession.iface.SqlSession;
+import com.melo.kkb.mybatis.sqlSession.iface.SqlSessionFactory;
 import com.melo.kkb.mybatis.config.Configuration;
 
 public class DefaultSqlSessionFactory implements SqlSessionFactory {

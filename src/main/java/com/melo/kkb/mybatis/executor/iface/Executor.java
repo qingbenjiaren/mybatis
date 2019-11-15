@@ -1,4 +1,4 @@
-package com.melo.kkb.mybatis.Executor.iface;
+package com.melo.kkb.mybatis.executor.iface;
 
 import com.melo.kkb.mybatis.config.Configuration;
 import com.melo.kkb.mybatis.config.MapperStatement;

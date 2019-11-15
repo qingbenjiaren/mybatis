@@ -1,7 +1,7 @@
-package com.melo.kkb.mybatis.Executor;
+package com.melo.kkb.mybatis.executor;
 
 
-import com.melo.kkb.mybatis.Executor.iface.ParameterHandler;
+import com.melo.kkb.mybatis.executor.iface.ParameterHandler;
 import com.melo.kkb.mybatis.config.MapperStatement;
 import com.melo.kkb.mybatis.sqlsource.BoundSql;
 import com.melo.kkb.mybatis.sqlsource.ParameterMapping;

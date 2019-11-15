@@ -1,6 +1,6 @@
-package com.melo.kkb.mybatis.Executor;
+package com.melo.kkb.mybatis.executor;
 
-import com.melo.kkb.mybatis.Executor.iface.ResultHandler;
+import com.melo.kkb.mybatis.executor.iface.ResultHandler;
 import com.melo.kkb.mybatis.utils.SimpleTypeRegistry;
 
 import java.lang.reflect.Field;
@@ -8,7 +8,6 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Map;
 
 @SuppressWarnings("unchecked")
 public class DefaultResultHandler implements ResultHandler {
