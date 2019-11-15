@@ -45,6 +45,9 @@ public class TextSqlNode implements SqlNode {
 
             // 使用Ognl api去获取相应的值
             Object value = OgnlUtils.getValue(expression, paramObject);
+            if(value instanceof String){
+                value = "'"+value+"'";
+            }
             return value == null ? "" : String.valueOf(value);
         }
     }

@@ -2,11 +2,11 @@
 
 <mapper namespace="select">
     <select id="selectUser" resultType="com.melo.kkb.mybatis.pojo.User" parameterType="com.melo.kkb.mybatis.pojo.User">
-        select * from user_info where id = ${id}
+        select * from user_info where id = #{id}
         <if test="name != null">
             AND name = ${name}
             <if test="website != null">
-                AND website = 1</if>
+                AND website = ${website}</if>
         </if>
     </select>
     <select id="selectAll" resultType="com.melo.kkb.mybatis.pojo.User" parameterType="com.melo.kkb.mybatis.pojo.User">

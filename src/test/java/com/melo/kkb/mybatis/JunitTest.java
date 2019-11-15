@@ -8,11 +8,6 @@ import com.melo.kkb.mybatis.config.XmlConfigurationBuilder;
 import com.melo.kkb.mybatis.io.Resource;
 import com.melo.kkb.mybatis.pojo.User;
 import org.junit.Test;
-
-import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 
 public class JunitTest {
@@ -27,9 +22,9 @@ public class JunitTest {
     public void testExecutor(){
         SqlSessionFactory factory =new SqlSessionFactoryBuilder().build(Resource.getResourceAsStream("mybatisConfig.xml"));
         SqlSession session = factory.openSession();
-        User user = session.selectOne("select.selectUser",new User(18));
-        List<User> userList = session.selectList("select.selectAll");
-        System.out.println(userList);
+        User user = session.selectOne("select.selectUser",new User(18,"徐长卿","pal3"));
+        //List<User> userList = session.selectList("select.selectAll");
+        //System.out.println(userList);
         System.out.println(user);
     }
 }
