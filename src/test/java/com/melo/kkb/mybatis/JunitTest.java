@@ -13,6 +13,7 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class JunitTest {
 
@@ -26,8 +27,9 @@ public class JunitTest {
     public void testExecutor(){
         SqlSessionFactory factory =new SqlSessionFactoryBuilder().build(Resource.getResourceAsStream("mybatisConfig.xml"));
         SqlSession session = factory.openSession();
-        User user = session.selectOne("select.selectUser",new User(2));
-        /*long i = session.selectOne("select.selectCount",new User(1));*/
+        User user = session.selectOne("select.selectUser",new User(18));
+        List<User> userList = session.selectList("select.selectAll");
+        System.out.println(userList);
         System.out.println(user);
     }
 }

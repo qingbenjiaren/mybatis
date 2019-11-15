@@ -1,5 +1,7 @@
 package com.melo.kkb.mybatis.sqlsource;
-
+/**
+ * 解析参数信息，主要包含参数名称和类型
+ */
 public class ParameterMapping {
     private String name;
     private Class<?> type;

@@ -1,6 +1,5 @@
 package com.melo.kkb.mybatis.sqlsource;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class BoundSql {

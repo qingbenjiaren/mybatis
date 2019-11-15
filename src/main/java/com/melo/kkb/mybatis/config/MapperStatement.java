@@ -2,6 +2,9 @@ package com.melo.kkb.mybatis.config;
 
 import com.melo.kkb.mybatis.sqlsource.iface.SqlSource;
 
+/**
+ * 用来封装映射文件中的CRUD标签，比如select标签
+ */
 public class MapperStatement {
     private Class<?> resultClass;
     private Class<?> parameterClass;

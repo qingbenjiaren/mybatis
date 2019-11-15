@@ -3,6 +3,9 @@ package com.melo.kkb.mybatis.sqlnode;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 封装sql和参数
+ */
 public class DynamicContext {
     private StringBuffer sb = new StringBuffer();
     private Map<String,Object> bindings = new HashMap<>();

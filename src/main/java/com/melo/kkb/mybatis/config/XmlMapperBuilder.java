@@ -6,13 +6,16 @@ import org.dom4j.Element;
 
 import java.io.InputStream;
 import java.util.List;
+/**
+ * 专门来解析映射文件的类
+ *
+ */
 @SuppressWarnings("unchecked")
 class XmlMapperBuilder {
     private Configuration configuration;
     XmlMapperBuilder(Configuration configuration){
         this.configuration = configuration;
     }
-
     void parse(InputStream is){
         Document doc = DocumentUtils.readDocument(is);
         Element rootElement = doc.getRootElement();
@@ -20,6 +23,7 @@ class XmlMapperBuilder {
     }
     private void parseMapper(Element rootElement){
         String namespace = rootElement.attributeValue("namespace");
+        //解析所有<select>标签
         List<Element> selectElements = rootElement.elements("select");
         XmlStatementBuilder xmlStatementBuilder = new XmlStatementBuilder(configuration);
         for(Element selectElement : selectElements){

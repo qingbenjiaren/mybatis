@@ -1,8 +1,10 @@
 package com.melo.kkb.mybatis.Executor.iface;
 
 import java.sql.PreparedStatement;
-import java.sql.Statement;
 
+/**
+ * 处理参数
+ */
 public interface ParameterHandler {
 
     void setParameter(PreparedStatement ps);

@@ -10,8 +10,7 @@ public class DocumentUtils {
     public static Document readDocument(InputStream inputStream) {
         try {
             SAXReader saxReader = new SAXReader();
-            Document document = saxReader.read(inputStream);
-            return document;
+            return saxReader.read(inputStream);
         } catch (DocumentException e) {
             e.printStackTrace();
         }

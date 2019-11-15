@@ -13,7 +13,7 @@ import java.util.Properties;
 /**
  * 解析全局配置文件
  */
-@SuppressWarnings("unchecked")
+@SuppressWarnings("ALL")
 public class XmlConfigurationBuilder {
     private Configuration configuration;
 
@@ -21,6 +21,11 @@ public class XmlConfigurationBuilder {
         configuration = new Configuration();
     }
 
+    /**
+     * 从跟节点开始解析全局配置文件
+     * @param is
+     * @return
+     */
     public Configuration parse(InputStream is){
         Document document = DocumentUtils.readDocument(is);
         Element root = document.getRootElement();
@@ -28,6 +33,10 @@ public class XmlConfigurationBuilder {
         return configuration;
     }
 
+    /**
+     * rootElement
+     * @param root
+     */
     private void parseConfiguration(Element root) {
         Element environments = root.element("environments");
         parseEnvironment(environments);
@@ -35,8 +44,13 @@ public class XmlConfigurationBuilder {
         parseMappers(mappers);
     }
 
+    /**
+     * mappers
+     * @param mappers
+     */
     private void parseMappers(Element mappers) {
         List<Element> mapperElements = mappers.elements("mapper");
+        //创建专门来解析映射文件的解析类
         XmlMapperBuilder xmlMapperBuilder = new XmlMapperBuilder(configuration);
         for(Element mapperElement : mapperElements){
             String mapperLocation = mapperElement.attributeValue("resource");
@@ -44,6 +58,10 @@ public class XmlConfigurationBuilder {
         }
     }
 
+    /**
+     * environment
+     * @param environmentElement
+     */
     private void parseEnvironment(Element environmentElement) {
         String defaultEnvId = environmentElement.attributeValue("default");
         if(defaultEnvId == null || defaultEnvId.equals("")){
@@ -57,6 +75,10 @@ public class XmlConfigurationBuilder {
         }
     }
 
+    /**
+     * dbElement
+     * @param el
+     */
     private void parseDataSource(Element el) {
         String type = el.attributeValue("type");
         if("DBCP".equals(type)){

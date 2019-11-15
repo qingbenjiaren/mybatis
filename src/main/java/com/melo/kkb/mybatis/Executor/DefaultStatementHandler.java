@@ -17,8 +17,8 @@ import java.util.List;
 public class DefaultStatementHandler implements StatementHandler {
     private ParameterHandler parameterHandler;
 
-    public DefaultStatementHandler(ParameterHandler handler){
-        this.parameterHandler = handler;
+    public DefaultStatementHandler(MapperStatement mapperStatement,Object parameter){
+        this.parameterHandler = new DefaultParameterHandler(mapperStatement,parameter);
     }
     @Override
     public <T> List<T> executeQuery(MapperStatement mapperStatement,Configuration configuration,ResultHandler resulthandler,BoundSql boundSql) {
